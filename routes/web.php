@@ -16,17 +16,8 @@ use App\Http\Controllers\FaqUserController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('admin-index', [FaqController::class, 'index'])->name('admin-index');
-Route::get('faq-create',[FaqController::class, 'create']);
-Route::post('store',[FaqController::class, 'store']);
-Route::get('edit{faq_id}',[FaqController::class, 'edit']);
-Route::post('update-data{faq_id}',[FaqController::class, 'update'])->name('admin-update');
-Route::get('delete{faq_id}', [FaqController::class, 'delete']);
-Route::get('show{faq_id}', [FaqController::class, 'show']);
 
-Route::get('/', [FaqUserController::class, 'faqIndex']);
+
+
 
 

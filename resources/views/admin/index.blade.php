@@ -44,10 +44,10 @@
             </tr>
         </thead>
         <tbody>
-            @php($i=1)
-            @foreach($faqs as $faq)
+            @if($faqs->count())
+            @foreach($faqs as $key => $faq)
             <tr>
-                <td>{{$i++}}</td>
+                <td>{{++$key}}</td>
                 <td>{{$faq->faq_question}}</td>
                 <td>{{$faq->faq_answer}}</td>
                 <td class="action-link text-center" ">
@@ -57,6 +57,7 @@
                 </td>
             </tr>
             @endforeach
+            @endif
         </tbody>
     </table>
     </div>

@@ -9,6 +9,8 @@ use Symfony\Contracts\Service\Attribute\Required;
 
 class FaqController extends Controller
 {
+
+
     public function index(){
         $faqs = Faq::all();
         return view('admin.index', compact('faqs'));
@@ -38,6 +40,7 @@ class FaqController extends Controller
             'faq_question' => 'required',
             'faq_answer' => 'required'
         ]);
+
         Faq::findOrFail($faq_id)->update([
             'faq_question' =>$request->faq_question,
             'faq_answer' => $request->faq_answer
@@ -45,11 +48,13 @@ class FaqController extends Controller
 
         return Redirect()->route('admin-index')->with('success', 'Faq has been successfully updated');
     }
+
     public function delete($faq_id){
         $faq =Faq::findOrFail($faq_id);
         $faq->delete();
         return Redirect()->back()->with('destroy', 'Faq has been successfully deleted');
     }
+    
     public function show($faq_id){
         $faq=Faq::find($faq_id);
         return view('admin.show', compact('faq'));

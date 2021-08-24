@@ -40,13 +40,13 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="faq_answer">FAQ Answer</label>
-                        <input type="text" name="faq_answer" class="form-control" value="{{$faqs->faq_answer}}">
+                        <textarea type="text" name="faq_answer" class="form-control" >{{$faqs->faq_answer}}</textarea>
                         @error('faq_answer')
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
 
-                    <input type="submit" name="ctg-btn" class="btn btn-primary btn-block" value="Save">
+                    <input type="submit" name="ctg-btn" class="btn btn-primary btn-block" value="Update">
                 </form>
             </div>
         </div>

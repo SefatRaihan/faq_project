@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="faq_answer">FAQ Answer</label>
-                    <input type="text" name="faq_answer" class="form-control">
+                    <textarea type="text" name="faq_answer" class="form-control"></textarea>
                     @error('faq_answer')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
